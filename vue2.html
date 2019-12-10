@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+	<div class="app">
+		{{mess}}
+		<br>
+		<span v-text='mess'></span>
+		<br>
+		<span v-html='add'></span>
+	</div>
+
+	<script>
+		var plus = function (val) {
+			return value < 10 ? '0' + value : value
+		}
+		var app = new Vue({
+			el: '.app',
+			data: {
+				mess: new Date(),
+				add: "<span style='color:red'>ok</span>"
+			},
+			created: function () {
+				//alert('创建完成，还未挂载')
+			},
+			mounted: function () {
+				var _this = this
+				this.timer = setInterval(function () {
+					_this.mess = new Date()
+				}, 1000)
+			},
+			clear: function () {
+				if (this.timer) {
+					clearInterval(this.timer)
+				}
+			},
+		})
+
+		console.log(app.mess)
+	</script>
+</body>
+
+</html>
