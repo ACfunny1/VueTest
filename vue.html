@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+	<div class="app">
+		{{mess}}
+	</div>
+
+	<script>
+		var app = new Vue({
+			el: '.app',
+			data: {
+				mess: 'Hello Vue'
+			},
+			created: function () {
+				//alert('创建完成，还未挂载')
+			},
+			mounted: function () {
+				//alert('已挂载')
+			},
+		})
+
+		console.log(app.mess)
+	</script>
+</body>
+
+</html>
